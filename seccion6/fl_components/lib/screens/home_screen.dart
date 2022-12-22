@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:fl_components/router/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +14,6 @@ class HomeScreen extends StatelessWidget {
       //El appbar no puede ser constante
       appBar: AppBar(
         title: const Text('Componentes en Flutter'),
-        elevation: 0,
       ),
       body: ListView.separated(
         itemCount: menuOptions.length,
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index) => ListTile(
           leading: Icon(
             menuOptions[index].icon,
-            color: Colors.indigo,
+            color: AppTheme.primary,
           ),
           title: Text(menuOptions[index].name),
           onTap: () {
